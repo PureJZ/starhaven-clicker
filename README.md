@@ -5,7 +5,7 @@ This guide will help you install and run **Starhaven Clicker**, a browser-based 
 
 ---
 
-## Step 1: Clone the Repository
+## Clone the Repository
 
 Open your terminal (or Git Bash on Windows), navigate to the folder where you'd like the project, and run:
 
