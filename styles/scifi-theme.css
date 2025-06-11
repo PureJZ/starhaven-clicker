@@ -1,0 +1,80 @@
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+}
+
+
+:root {
+  --bg:        #0d1018;
+  --panel:     #141925;
+  --text:      #ffffff;     
+  --accent:    #4cc3ff;
+  --accent-dim:#27567a;
+}
+
+
+body.hasBackground {
+  background: linear-gradient(135deg, var(--bg) 0%, #161c2a 100%);
+  color: var(--text);
+  font-family: "Orbitron", system-ui, sans-serif;
+}
+
+
+button {
+  background: var(--panel);
+  border: 1px solid var(--accent-dim);
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: transform .1s ease, border-color .1s ease;
+  color: var(--text);          
+}
+button:hover       { transform: translateY(-1px); border-color: var(--accent); }
+button:disabled    { opacity: .45; cursor: not-allowed; }
+
+#strip,
+#header,
+.civSection {
+  background: var(--panel);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px #0009;
+  color: var(--text);               
+}
+
+
+.icon-lg { filter: hue-rotate(180deg); }
+
+
+a { color: var(--accent); }
+
+
+button[data-action="increment"]:hover {
+  background: #0b0f17 !important;  
+  border-color: var(--accent);      
+  color: var(--text);               
+}
+
+
+.note,
+.cost,
+.tip,
+.maxNumber,
+.number,
+.resources label { color: var(--text) !important; }
+
+
+.paneSelector,
+.paneSelector.selected,
+.selectPane,
+.paneSelector .alert { color: var(--text) !important; }
+
+
+#events,
+#logTable,
+#wondersContainer,
+.achievement,
+.itemname { color: var(--text) !important; }
+
+button:disabled { color: var(--text) !important; opacity: .35; }
+
+
