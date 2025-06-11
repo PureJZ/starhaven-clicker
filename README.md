@@ -1,4 +1,3 @@
-# Starhaven Clicker
 # Starhaven Clicker — Local Installation Guide
 
 This guide will help you install and run **Starhaven Clicker**, a browser-based sci-fi clicker game, on your local machine. No external software beyond a web browser is required!
