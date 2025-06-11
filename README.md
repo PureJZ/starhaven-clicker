@@ -15,3 +15,9 @@ git clone https://github.com/PureJZ/starhaven-clicker.git
 cd starhaven-clicker
 
 python -m http.server 8000
+
+```
+Next open your browser and go to 
+```bash
+http://localhost:8000
+```
