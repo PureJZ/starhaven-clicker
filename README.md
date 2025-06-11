@@ -11,3 +11,7 @@ Open your terminal (or Git Bash on Windows), navigate to the folder where you'd 
 
 ```bash
 git clone https://github.com/PureJZ/starhaven-clicker.git
+
+cd starhaven-clicker
+
+python -m http.server 8000
