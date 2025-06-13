@@ -1,5 +1,4 @@
-/* eslint-disable no-var, quotes, prefer-template, no-use-before-define, no-param-reassign, max-lines, vars-on-top, eqeqeq, no-plusplus, prefer-arrow-callback */
-// TODO: Clean up coade and the remove these disables ^
+
 import { CivObj, VersionData } from './civclicker-classes.js';
 import {
 	makeCivData, civSizes, getWonderResources, typeToId,
@@ -13,27 +12,7 @@ import updater from './civclicker-update.js';
 import { sgn, abs } from './number-formatters.js';
 import LZString from './libs/lz-string.js';
 
-/**
-	CivClicker
-	Copyright (C) 2014; see the README.md file for authorship.
 
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program in the LICENSE file.
-	If it is not there, see <http://www.gnu.org/licenses/>.
-*/
-
-// TODO: Update the version numbering internally
-// var version = 19; // This is an ordinal used to trigger reloads.
 var versionData = new VersionData(1, 1, 59, "alpha"); // this is not accurate
 
 var saveTag = "civ";
@@ -48,8 +27,8 @@ var PATIENT_LIST = [
 
 // Declare variables here so they can be referenced later.
 const curCiv = {
-	civName: "Woodstock",
-	rulerName: "Orteil",
+	civName: "PureJZ's Gang",
+	rulerName: "King JZ",
 	zombie: { owned: 0 },
 	grave: { owned: 0 },
 	enemySlain: { owned: 0 },
@@ -415,14 +394,7 @@ function meetsUpgradePrereqs(prereqObj) {
 	return true;
 }
 
-// Returns how many of this item the player can afford.
-// Looks only at the item's cost and the player's resources, and not
-// at any other limits.
-// Negative quantities are always fully permitted.
-// An undefined cost structure is assumed to mean it cannot be purchased.
-// A boolean quantity is converted to +1 (true) -1 (false)
-// xxx Caps nonlinear purchases at +1, blocks nonlinear sales. TODO: fix this
-// costObj - The cost substructure of the object to purchase
+
 function canAfford(costObj, qty) {
 	if (!isValid(costObj)) { return 0; }
 	if (qty === undefined) { qty = Infinity; } // default to as many as we can
@@ -440,10 +412,7 @@ function canAfford(costObj, qty) {
 	return qty;
 }
 
-// Tries to pay for the specified quantity of the given cost object.
-// Pays for fewer if the whole amount cannot be paid.
-// Return the quantity that could be afforded.
-// xxx DOES NOT WORK for nonlinear building cost items!
+
 function payFor(costObj, qty) {
 	if (qty === undefined) { qty = 1; } // default to 1
 	if (qty === false) { qty = -1; } // Selling back a boolean item.
@@ -464,10 +433,7 @@ function payFor(costObj, qty) {
 	return qty;
 }
 
-// Returns the number of the object that we could buy or sell, taking into
-// account any applicable limits.
-// purchaseObj - The object to purchase
-// qty - Maximum number to buy/sell (use -Infinity for the max salable)
+
 function canPurchase(purchaseObj, qty) {
 	if (!purchaseObj) { return 0; }
 	if (qty === undefined) { qty = Infinity; } // Default to as many as we can.
@@ -800,12 +766,7 @@ function onIncrement(control) {
 	return increment(targetId);
 }
 
-// Buys or sells a unit, building, or upgrade.
-// Pass a positive number to buy, a negative number to sell.
-// If it can't add/remove as many as requested, does as many as it can.
-// Pass Infinity/-Infinity as the num to get the max possible.
-// Pass "custom" or "-custom" to use the custom increment.
-// Returns the actual number bought or sold (negative if fired).
+
 function doPurchase(objId, num) {
 	var purchaseObj = civData[objId];
 	if (!purchaseObj) { console.log("Unknown purchase: " + objId); return 0; }
@@ -1092,10 +1053,7 @@ function digGraves(num) {
 	updater.updatePopulation(population, homeUnits, armyUnits, unitData);
 }
 
-// Selects a random healthy worker based on their proportions in the current job distribution.
-// xxx Doesn't currently pick from the army
-// xxx Take a parameter for how many people to pick.
-// xxx Make this able to return multiples by returning a cost structure.
+
 function randomHealthyWorker() {
 	var num = Math.random() * population.healthy;
 	var chance = 0;
@@ -2117,8 +2075,7 @@ function importByInput(elt) {
 	return loadVar;
 }
 
-// Create objects and populate them with the variables, these will be stored in HTML5 localStorage.
-// Cookie-based saves are no longer supported.
+
 function save(savetype) {
 	const saveVar = {
 		versionData: versionData, // Version information header
@@ -3202,10 +3159,7 @@ function gameLoop() {
 	// Data changes should be done; now update the UI.
 	updater.updateAll(getUpdateAllInput());
 
-	// Debugging - mark end of main loop and calculate delta in milliseconds
-	// var end = new Date().getTime();
-	// var time = end - start;
-	// console.log("Main loop execution time: " + time + "ms");
+	
 }
 
 function getUpdateAllInput() {
@@ -3406,10 +3360,4 @@ updater.setup({ civInterface, ui, prettify, achData, settings });
 
 setup.all();
 
-/*
- * If you're reading this, thanks for playing!
- * This project was my first major HTML5/Javascript game, and was as
- * much about learning Javascript as it is anything else. I hope it
- * inspires others to make better games. :)
- *     - Katherine Stark
- */
+
