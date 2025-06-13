@@ -1,4 +1,3 @@
-
 const TAG_DISPLAY = {
 	SPAN: 'inline',
 	BUTTON: 'inline-block',
