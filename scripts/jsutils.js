@@ -1,24 +1,3 @@
-/* eslint-disable no-param-reassign, no-restricted-syntax */
-// TODO: Clean up coade and the remove these disables ^
-/**
-	CivClicker
-	Copyright (C) 2014; see the README.md file for authorship.
-
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program in the LICENSE file.
-	If it is not there, see <http://www.gnu.org/licenses/>.
-*/
-
 const FUNDAMENTAL_OBJECTS = {
 	object: Object,
 	boolean: Boolean,
@@ -31,19 +10,16 @@ function isValid(variable) {
 	return ((variable !== null)
 			&& (variable !== undefined)
 			&& (variable === variable)
-	); // This is a way to test for NaN that
-	// isn't subject to the unexpected behavior of isNaN().
+	); 
 }
 
-// Returns the variable if it's valid, otherwise the default value (or "")
+
 function ifValid(variable, defVal) {
 	if (defVal === undefined) { defVal = ''; }
 	return isValid(variable) ? variable : '';
 }
 
-// Evaluates and returns variable if it's a function, otherwise just returns it.
-// Passes surplus arguments on to the function.
-// TODO: xxx argument forwarding needs testing.
+
 function valOf(variable) {
 	if (typeof variable === 'function') {
 		return variable.apply(this, Array.prototype.slice.call(arguments, 1));
@@ -82,9 +58,7 @@ function calcArithSum(incr, n, m) {
 	return ((m - n) * ((n * incr) + ((m - 1) * incr))) / 2;
 }
 
-// Search for the largest integer X that generates func(X) < limitY.
-// func should be a continuous increasing numeric function.
-// xxx This would probably be more elegant written recursively.
+
 function logSearchFn(func, limitY) {
 	let minX = 0;
 	let maxX = 0;
@@ -137,10 +111,6 @@ function mergeObj(o1, o2) {
 	return o1;
 }
 
-// Workaround for IE's lack of support for the dataset property.
-// Also searches up the DOM tree on lookups, to mimic inheritance.
-// Pass 'value' to set the value, otherwise returns the value.
-// Returns "true" and "false" as actual booleans.
 function dataset(elem, attr, value) {
 	if (value !== undefined) { return elem.setAttribute(`data-${attr}`, value); }
 
@@ -160,9 +130,7 @@ function rndRound(num) {
 	return baseVal + ((Math.random() < (num - baseVal)) ? 1 : 0);
 }
 
-// Copy properties from to dest from src
-// If 'names' array supplied, only copies the named properties
-// If 'deleteOld' is true, deletes the properties from the old object
+
 function copyProps(dest, src, names, deleteOld) {
 	if (!(names instanceof Array)) { names = Object.getOwnPropertyNames(src); }
 	if (!isValid(deleteOld)) { deleteOld = false; }
