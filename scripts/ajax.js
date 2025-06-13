@@ -21,5 +21,4 @@ ajax.get = function ajaxGet(url, callback) {
 	req.open('GET', url, true);
 	req.send();
 };
-
 export default ajax;
