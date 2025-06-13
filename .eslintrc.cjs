@@ -1,7 +1,5 @@
-
 const isWindows = (process.platform === 'win32');
 const linebreakStyle = isWindows ? 'windows' : 'unix';
-
 module.exports = {
 	"env": {
 		"browser": true,
