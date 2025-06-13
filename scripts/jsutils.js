@@ -13,12 +13,10 @@ function isValid(variable) {
 	); 
 }
 
-
 function ifValid(variable, defVal) {
 	if (defVal === undefined) { defVal = ''; }
 	return isValid(variable) ? variable : '';
 }
-
 
 function valOf(variable) {
 	if (typeof variable === 'function') {
@@ -57,7 +55,6 @@ function calcArithSum(incr, n, m) {
 	if (m === undefined) { m = n + 1; }
 	return ((m - n) * ((n * incr) + ((m - 1) * incr))) / 2;
 }
-
 
 function logSearchFn(func, limitY) {
 	let minX = 0;
