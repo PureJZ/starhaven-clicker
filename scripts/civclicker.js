@@ -1,4 +1,3 @@
-
 import { CivObj, VersionData } from './civclicker-classes.js';
 import {
 	makeCivData, civSizes, getWonderResources, typeToId,
@@ -11,8 +10,6 @@ import {
 import updater from './civclicker-update.js';
 import { sgn, abs } from './number-formatters.js';
 import LZString from './libs/lz-string.js';
-
-
 var versionData = new VersionData(1, 1, 59, "alpha"); // this is not accurate
 
 var saveTag = "civ";
