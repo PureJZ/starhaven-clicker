@@ -3,10 +3,7 @@ import {
 	Resource, Building, Upgrade, Unit, Achievement, CivObj,
 } from './civclicker-classes.js';
 import { indexArrayByAttr } from './jsutils.js';
-
 const NEVER_CLICK_THRESHOLD = 22;
-
-
 const civSizes = [
 	{ min_pop: 0, name: "Outpost", id: "thorp" },
 	{ min_pop: 20, name: "Depot", id: "hamlet" },
