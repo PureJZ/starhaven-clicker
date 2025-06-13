@@ -1,4 +1,3 @@
-
 const renameMap = {
   food:   { singular: "nutri‑pack",          plural: "nutri‑packs"   },
   wood:   { singular: "synth‑fiber",        plural: "synth‑fibers" },
@@ -8,8 +7,6 @@ const renameMap = {
   ore:    { singular: "raw ore",       plural: "raw ore"  },
   metal:  { singular: "refined alloy",        plural: "refined alloys"  },
   gold:  { singular: "credit",        plural: "credits"  }
-
-
 
   tent:       { singular: "hab‑pod",        plural: "hab‑pods",        effectText: "+1 crew capacity" },
   hut:        { singular: "field module",   plural: "field modules",   effectText: "+3 crew capacity" },
