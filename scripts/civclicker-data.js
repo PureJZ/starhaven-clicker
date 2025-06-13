@@ -1,4 +1,3 @@
-
 import {
 	Resource, Building, Upgrade, Unit, Achievement, CivObj,
 } from './civclicker-classes.js';
@@ -18,8 +17,6 @@ const civSizes = [
 	{ min_pop: 200000, name: "Large Core-World", id: "largeNation" },
 	{ min_pop: 500000, name: "Empire-World", id: "empire" },
 ];
-
-
 function typeToId(deityType) {
 	if (deityType === "Battle") { return "battle"; }
 	if (deityType === "Cats") { return "cats"; }
