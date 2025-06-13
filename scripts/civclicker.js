@@ -21,7 +21,6 @@ var PATIENT_LIST = [
 	"healer", "cleric", "farmer", "soldier", "cavalry", "labourer",
 	"woodcutter", "miner", "tanner", "blacksmith", "unemployed",
 ];
-
 // Declare variables here so they can be referenced later.
 const curCiv = {
 	civName: "PureJZ's Gang",
